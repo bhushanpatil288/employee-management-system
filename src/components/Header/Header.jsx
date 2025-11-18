@@ -1,4 +1,5 @@
 import { Link, NavLink } from "react-router-dom"
+import {Button} from '../common'
 
 
 function Header() {
@@ -33,10 +34,9 @@ function Header() {
 						>Contact</NavLink>
 					</li>
 				</ul>
-				<Link
-					to='/sign-in'
-					className="bg-blue-200 text-neutral-700 hover:bg-blue-300 hover:text-white px-3 py-1 shadow inset-shadow-black rounded-lg ms-3 transition"
-				>Sign in</Link>
+				<Link to='/sign-in'>
+					<Button text='Sign-in' />
+				</Link>
 			</div>
 		</div>
 
