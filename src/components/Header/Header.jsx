@@ -5,7 +5,7 @@ import {useContext} from 'react'
 
 
 function Header() {
-	const {user} = useContext(AuthContext)
+	const {user, setUser} = useContext(AuthContext)
   return (
     <div className="container mx-auto px-5 py-3">
 		<div className="flex justify-between items-center">
@@ -37,12 +37,20 @@ function Header() {
 						>Contact</NavLink>
 					</li>
 				</ul>
-				<Link to='/sign-in'>
-					<Button 
-						text={user ? 'Log out' : 'Sign in'} 
-						color={user ? 'red' : 'blue'} 
+				{user ? (
+					<Button
+						onClick={() => setUser(null)}
+						text="Log out"
+						color="red"
+					/>
+					) : (
+					<Link to="/sign-in">
+						<Button
+							text="Sign in"
+							color="blue"
 						/>
-				</Link>
+					</Link>
+					)}
 			</div>
 		</div>
 
