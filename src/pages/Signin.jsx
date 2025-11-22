@@ -1,8 +1,10 @@
-import { useState } from "react"
+import { useState, useContext } from "react"
 import { Button } from "../components/common"
 import { useNavigate } from "react-router-dom";
+import AuthContext from "../Auth/AuthContext.js";
 
 function Signin() {
+    const {user, setUser} = useContext(AuthContext)
     const [emailState, setEmailState] = useState('');
     const [passwordState, setPasswordStat] = useState('');
 
@@ -12,6 +14,7 @@ function Signin() {
         e.preventDefault();
         if(emailState === 'admin@example.com' && passwordState === '123'){
             console.log("valid user");
+            setUser('admin');
             navigate('/admin-dashboard');
         } else {
             console.log("Invalid user");

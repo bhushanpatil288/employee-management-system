@@ -1,8 +1,11 @@
 import { Link, NavLink } from "react-router-dom"
 import {Button} from '../common'
+import AuthContext from "../../Auth/AuthContext"
+import {useContext} from 'react'
 
 
 function Header() {
+	const {user} = useContext(AuthContext)
   return (
     <div className="container mx-auto px-5 py-3">
 		<div className="flex justify-between items-center">
@@ -35,7 +38,10 @@ function Header() {
 					</li>
 				</ul>
 				<Link to='/sign-in'>
-					<Button text='Sign-in' />
+					<Button 
+						text={user ? 'Log out' : 'Sign in'} 
+						color={user ? 'red' : 'blue'} 
+						/>
 				</Link>
 			</div>
 		</div>

@@ -1,15 +1,16 @@
 import { Outlet } from "react-router-dom"
 import {Header, Footer} from './components/index'
+import AuthContextProvider from "./Auth/AuthContextProvider"
 
 function Layout() {
   return (
-    <div>
+    <AuthContextProvider>
       <Header />
-      <div className="container mx-auto px-5 py-3">
+      <div className="container mx-auto px-5 py-3 h-197">
         <Outlet />
       </div>
       <Footer />
-    </div>
+    </AuthContextProvider>
   )
 }
 
