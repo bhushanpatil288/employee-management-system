@@ -1,36 +1,16 @@
-import { NavLink } from "react-router-dom"
-
 function Footer() {
-  return (
-    <div className='container mx-auto px-5 py-3 border rounded-t-lg bg-gradient-to-tr from-blue-800 to-blue-300 text-white'>
-      <ul className="flex flex-col gap-2 items-end">
-				<li>
-					<NavLink
-						to='/'
-						className={({isActive})=>
-							`${isActive ? 'text-white text-blue-400 text-blue-700' : 'hover:text-gray-200'}  px-3 py-1 rounded-lg transition`
-						}
-					>Home</NavLink>
-				</li>
-				<li>
-					<NavLink
-						to='/about'
-						className={({isActive})=>
-							`${isActive ? 'text-white text-blue-400 text-blue-700' : 'hover:text-gray-200'} px-3 py-1 rounded-lg transition`
-						}
-					>About</NavLink>
-				</li>
-				<li>
-					<NavLink
-						to='/contact'
-						className={({isActive})=>
-							`${isActive ? 'text-white text-blue-400 text-blue-700' : 'hover:text-gray-200'} px-3 py-1 rounded-lg transition`
-						}
-					>Contact</NavLink>
-				</li>
-			</ul>
-    </div>
-  )
+	return (
+		<div className="bg-gray-800 text-gray-400 py-6">
+			<div className="container mx-auto px-5 flex flex-col sm:flex-row justify-between items-center gap-3">
+				<p className="text-sm">
+					© 2026 <span className="text-white font-medium">EMS</span> — Employee Management System
+				</p>
+				<p className="text-xs">
+					Built with React + Vite + Tailwind CSS
+				</p>
+			</div>
+		</div>
+	)
 }
 
 export default Footer
